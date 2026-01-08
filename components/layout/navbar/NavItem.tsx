@@ -10,7 +10,7 @@ export function NavItem({ href, active = false, children }: NavItemProps) {
   return (
     <Link
       href={href}
-      className={`relative pb-1 text-sm font-medium transition-colors ${
+      className={`relative pb-1 text-sm font-medium transition-colors pr-5 pl-5 ${
         active ? "text-red-600" : "text-neutral-800"
       }`}
     >
