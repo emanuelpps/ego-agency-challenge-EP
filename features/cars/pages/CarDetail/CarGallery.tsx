@@ -17,12 +17,10 @@ export default function CarGallery({ items = [] }: Props) {
     if (index < 0 || index >= items.length) return;
 
     const itemWidth = containerRef.current.children[0]?.clientWidth ?? 0;
-
     containerRef.current.scrollTo({
       left: itemWidth * index,
       behavior: "smooth",
     });
-
     setActiveIndex(index);
   };
 
@@ -88,13 +86,15 @@ export default function CarGallery({ items = [] }: Props) {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-center gap-3">
+        <div className="mt-10 mb-10 flex justify-center gap-3">
           {items.map((_, index) => (
             <button
               key={index}
               onClick={() => scrollToIndex(index)}
               className={`h-[6px] rounded-full transition-all ${
-                activeIndex === index ? "w-8 bg-gray-500" : "w-3 bg-gray-300"
+                activeIndex === index
+                  ? "w-8 bg-[#4A4A4A]/50"
+                  : "w-3 bg-[#C5C5C5]/50"
               }`}
             />
           ))}

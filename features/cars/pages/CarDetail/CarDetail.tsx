@@ -10,7 +10,7 @@ interface Props {
 
 export default function CarDetail({ car }: Props) {
   return (
-    <section className="mx-auto px-4 pt-24 pb-16 space-y-20">
+    <section className="mx-auto px-4 lg:pt-24 pb-16 space-y-20">
       <CarHero car={car} />
       <CarFeatures items={mapFeaturesToGallery(car.model_features)} />
       <CarHighlights highlights={car.model_highlights} />
