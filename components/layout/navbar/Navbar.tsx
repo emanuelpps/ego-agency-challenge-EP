@@ -36,7 +36,7 @@ export function Navbar() {
           onClick={toggleMenu}
           className="flex items-center gap-2 text-sm text-neutral-700"
         >
-          <span className="font-[400]">Menú</span>
+          <span className="font-[400] hidden lg:flex">Menú</span>
           <div className="flex flex-col gap-[3px]">
             <Image src="/icons/Menu.svg" width={24} height={24} alt="Home" />
           </div>
