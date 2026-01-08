@@ -2,8 +2,10 @@ import React from "react";
 
 const CarsHeader: React.FC = () => {
   return (
-    <header>
-      <h1>Descubrí todos los modelos</h1>
+    <header className="w-full">
+      <h1 className="font-bold text-[#373737] text-[2rem] lg:text-[3.125rem]">
+        Descubrí todos los modelos
+      </h1>
     </header>
   );
 };

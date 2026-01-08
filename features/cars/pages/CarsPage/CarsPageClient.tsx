@@ -39,7 +39,7 @@ export default function CarsPageClient({ cars }: Props) {
   return (
     <main className="max-w-5xl min-h-screen px-4 mx-auto">
       <CarsHeader />
-      <div className="flex items-center justify-between border-b border-gray-200 pb-2 mt-20">
+      <div className="flex items-center justify-between border-b border-gray-200 pb-2 mt-10 md:mt-20">
         <FilterBar value={segment} onChange={setSegment} />
         <SortSelect value={sort} onChange={setSort} />
       </div>

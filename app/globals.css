@@ -17,11 +17,3 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
-
-h1{
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 3.125rem;
-  color: #373737;
-;
-}
