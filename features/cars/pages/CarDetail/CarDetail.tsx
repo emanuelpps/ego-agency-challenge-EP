@@ -1,18 +1,19 @@
-import { CarDetailModel } from "../../types/car.api.types";
+import { CarDetailApiModel } from "@/features/cars/types/car.api.types";
+import CarFeatures from "./CarFeature";
+import CarHighlights from "./CarHighlights";
+import { mapFeaturesToGallery } from "@/lib/mappers/car.mappers";
 import CarHero from "./CarHero";
-import CarGallery from "./CarGallery";
-import CarSpecs from "./CarSpecs";
 
 interface Props {
-  car: CarDetailModel;
+  car: CarDetailApiModel;
 }
 
 export default function CarDetail({ car }: Props) {
   return (
-    <section className="max-w-6xl mx-auto px-4 pt-24 pb-16 space-y-20">
+    <section className="mx-auto px-4 pt-24 pb-16 space-y-20">
       <CarHero car={car} />
-      <CarGallery gallery={car.gallery} />
-      <CarSpecs />
+      <CarFeatures items={mapFeaturesToGallery(car.model_features)} />
+      <CarHighlights highlights={car.model_highlights} />
     </section>
   );
 }

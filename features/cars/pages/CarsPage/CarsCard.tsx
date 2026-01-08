@@ -24,9 +24,9 @@ const CarsCard: React.FC<CarsCardProps> = ({ car }) => {
           </p>
         </div>
         <div className="relative w-full h-[200px] flex items-center justify-center">
-          {!imageError && car.photo ? (
+          {!imageError && car.thumbnail ? (
             <Image
-              src={car.photo}
+              src={car.thumbnail}
               alt={car.name}
               fill
               className="object-contain rounded-md"
