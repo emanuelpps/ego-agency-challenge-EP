@@ -9,7 +9,11 @@ export default async function CarDetailPage({ params }: Props) {
   const { slug } = await params;
   const car = await getCarById(slug);
   if (!car) {
-    return <p>Modelo no encontrado</p>;
+    return (
+      <p className="w-full h-full flex justify-center items-center">
+        Modelo no encontrado
+      </p>
+    );
   }
   return <CarDetail car={car} />;
 }

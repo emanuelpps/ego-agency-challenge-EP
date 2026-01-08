@@ -7,3 +7,16 @@ export interface CarApiModel {
   thumbnail: string;
   photo: string;
 }
+
+export interface CarDetailModel extends CarApiModel {
+  title: string;
+  description: string;
+  gallery: ModelFeatures[];
+}
+
+export interface ModelFeatures {
+  name: string;
+  description: string;
+  image: string;
+}
+
