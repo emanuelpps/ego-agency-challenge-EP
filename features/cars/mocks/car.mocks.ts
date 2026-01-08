@@ -1,4 +1,4 @@
-import { Car } from "../car.types";
+import { Car } from "../types/car.types";
 
 export const carsMock: Car[] = [
   {

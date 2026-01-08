@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Car } from "../../car.types";
+import { Car } from "../../types/car.types";
 
 interface CarsCardProps {
   car: Car;
