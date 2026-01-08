@@ -30,7 +30,7 @@ export default function FilterBar({ value, onChange }: Props) {
               <button
                 key={filter.value}
                 onClick={() => onChange(filter.value)}
-                className={`px-5 py-2 transition-colors flex justify-center items-center text-[#373737] rounded-[18px] text-[14px] whitespace-nowrap ${
+                className={`cursor-pointer px-5 py-2 transition-colors flex justify-center items-center text-[#373737] rounded-[18px] text-[14px] whitespace-nowrap ${
                   value === filter.value ? "bg-[#F7F7F7]" : "hover:bg-[#F7F7F7]"
                 }`}
               >
