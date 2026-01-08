@@ -1,28 +1,40 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { Car } from "../../car.types";
 
 interface CarsCardProps {
-  cars: Car[];
+  car: Car;
 }
 
-const CarsCard: React.FC<CarsCardProps> = ({ cars }) => {
+const CarsCard: React.FC<CarsCardProps> = ({ car }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
-    <div>
-      {cars.map((car, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
-          <h2>{car.name}</h2>
-          <p style={{ fontWeight: "300", fontSize: "14px" }}>
-            {car.year} | ${car.price}
-          </p>
-          {/*<Image
+    <article className="flex flex-col h-full rounded-lg p-4">
+      <div className="text-center mb-4">
+        <h2 className="font-semibold text-lg">{car.name}</h2>
+        <p className="text-sm text-gray-600">
+          {car.year} | ${car.price.toLocaleString()}
+        </p>
+      </div>
+      <div className="relative w-full h-[200px] flex items-center justify-center">
+        {!imageError && car.photo ? (
+          <Image
             src={car.photo}
             alt={car.name}
-            style={{ width: "100%", height: "auto" }}
-          /> */}
-        </div>
-      ))}
-    </div>
+            fill
+            className="object-contain rounded-md"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-md text-sm text-gray-500">
+            Error al cargar la imagen
+          </div>
+        )}
+      </div>
+    </article>
   );
 };
 
