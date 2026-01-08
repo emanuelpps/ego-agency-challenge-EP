@@ -16,7 +16,7 @@ export function NavItem({ href, active = false, children }: NavItemProps) {
     >
       {children}
       {active && (
-        <span className="absolute left-0 -bottom-[12px] h-[2px] w-full bg-red-600" />
+        <span className="absolute left-0 -bottom-[23px] h-[2px] w-full bg-red-600" />
       )}
     </Link>
   );

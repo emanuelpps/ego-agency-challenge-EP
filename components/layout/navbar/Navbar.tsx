@@ -15,7 +15,7 @@ export function Navbar() {
             EGO
           </div>
         </div>
-        <nav className="items-center hidden gap-10 md:flex">
+        <nav className="items-center hidden w-full gap-10 pl-20 md:flex">
           <NavItem href="/" active={pathname === "/"}>
             Modelos
           </NavItem>
