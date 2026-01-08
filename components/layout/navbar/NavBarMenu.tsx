@@ -51,7 +51,7 @@ export default function NavBarMenu({
 }: NavBarMenuProps) {
   return (
     <div
-      className={`fixed top-0 right-0 z-50 h-screen w-[375px] bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-300
+      className={`fixed top-0 right-0 z-50 h-screen w-full sm:w-[375px] bg-white border-l border-gray-200 shadow-lg transform transition-transform duration-300
         ${isMenuOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
     >
       <div className="flex justify-end p-5">
