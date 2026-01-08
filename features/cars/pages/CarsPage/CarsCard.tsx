@@ -1,13 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-interface Car {
-  id: number;
-  title: string;
-  year: number;
-  price: number;
-  imageUrl: string;
-}
+import { Car } from "../../car.types";
 
 interface CarsCardProps {
   cars: Car[];
@@ -18,15 +11,15 @@ const CarsCard: React.FC<CarsCardProps> = ({ cars }) => {
     <div>
       {cars.map((car, index) => (
         <div key={index} style={{ marginBottom: "20px" }}>
-          <h2>{car.title}</h2>
+          <h2>{car.name}</h2>
           <p style={{ fontWeight: "300", fontSize: "14px" }}>
             {car.year} | ${car.price}
           </p>
-          <Image
-            src={car.imageUrl}
-            alt={car.title}
+          {/*<Image
+            src={car.photo}
+            alt={car.name}
             style={{ width: "100%", height: "auto" }}
-          />
+          /> */}
         </div>
       ))}
     </div>
