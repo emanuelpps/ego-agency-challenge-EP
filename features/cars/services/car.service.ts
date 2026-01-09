@@ -1,5 +1,6 @@
-import { API_ENDPOINTS } from "@/app/lib/api/endpoints";
-import { Car } from "../types/car.types";
+import { API_ENDPOINTS } from "@/api/endpoints";
+import { Car } from "@/features/cars/types/car.types";
+import { CarDetailApiModel } from "@/features/cars/types/car.api.types";
 
 export async function getCars(): Promise<Car[]> {
   try {
@@ -14,5 +15,24 @@ export async function getCars(): Promise<Car[]> {
   } catch {
     console.error("Error de red al obtener los modelos");
     return [];
+  }
+}
+
+export async function getCarById(id: string): Promise<CarDetailApiModel | null> {
+  try {
+    const response = await fetch(API_ENDPOINTS.CAR_BY_ID(id), {
+      next: { revalidate: 60 },
+    });
+    if (!response.ok) {
+      console.error(
+        API_ENDPOINTS.CAR_BY_ID(id),
+        `Error al obtener el modelo ${id} (status ${response.status})`
+      );
+      return null;
+    }
+    return response.json();
+  } catch (error) {
+    console.error("Error de red al obtener el modelo", error);
+    return null;
   }
 }

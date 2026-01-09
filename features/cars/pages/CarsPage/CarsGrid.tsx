@@ -1,5 +1,7 @@
+"use client";
 import CarsCard from "./CarsCard";
 import { Car } from "../../types/car.types";
+import { motion } from "framer-motion";
 
 interface CarsGridProps {
   cars: Car[];
@@ -14,11 +16,28 @@ const CarsGrid: React.FC<CarsGridProps> = ({ cars }) => {
     );
   }
   return (
-    <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-10 md:px-0">
+    <motion.div
+      className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-10 md:px-0"
+      initial="hidden"
+      animate="visible"
+      transition={{ staggerChildren: 0.1 }}
+      variants={{
+        hidden: {},
+        visible: {},
+      }}
+    >
       {cars.map((car) => (
-        <CarsCard key={car.id} car={car} />
+        <motion.div
+          key={car.id}
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          <CarsCard car={car} />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
