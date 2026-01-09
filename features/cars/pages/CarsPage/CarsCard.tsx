@@ -40,13 +40,13 @@ const CarsCard: React.FC<CarsCardProps> = ({ car }) => {
             {car.year} | ${car.price.toLocaleString()}
           </p>
         </div>
-        <div className="relative w-[268ox] h-[132px] flex items-center justify-center">
+        <div className="relative w-full aspect-[16/9] flex items-center justify-center">
           {!imageError && car.thumbnail ? (
             <Image
               src={car.thumbnail}
               alt={car.name}
               fill
-              className="object-contain rounded-md"
+              className="object-contain max-w-[240px] max-h-[180px]"
               onError={() => setImageError(true)}
             />
           ) : (

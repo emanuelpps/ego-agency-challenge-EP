@@ -24,7 +24,7 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-        <nav className="items-center hidden w-full gap-10 pl-20 md:flex">
+        <nav className="items-center hidden w-[90%] gap-10 pl-20 md:flex">
           <NavItem href="/" active={pathname === "/"}>
             Modelos
           </NavItem>
