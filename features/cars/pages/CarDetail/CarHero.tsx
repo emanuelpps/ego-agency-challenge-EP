@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { CarDetailApiModel } from "../../types/car.api.types";
+import { RevealFromSide } from "@/components/animations/RevealFromSide";
 
 interface Props {
   car: CarDetailApiModel;
@@ -8,7 +10,10 @@ interface Props {
 export default function CarHero({ car }: Props) {
   return (
     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:p-8">
-      <div className="relative w-full h-[280px] sm:h-[360px]">
+      <RevealFromSide
+        side="left"
+        className="relative w-full h-[280px] sm:h-[360px]"
+      >
         <Image
           src={car.photo}
           alt={car.name}
@@ -16,8 +21,8 @@ export default function CarHero({ car }: Props) {
           className="object-contain"
           priority
         />
-      </div>
-      <div className="space-y-6 text-left">
+      </RevealFromSide>
+      <RevealFromSide side="right" className="space-y-6 text-left">
         <span className="text-[20px] text-[#373737] font-medium">
           {car.name}
         </span>
@@ -25,9 +30,9 @@ export default function CarHero({ car }: Props) {
           {car.title}
         </h1>
         <p className="text-[#373737] text-[16px] max-w-md mx-auto lg:mx-0">
-          {car.description.replace(/<[^>]+>/g, '')}
+          {car.description.replace(/<[^>]+>/g, "")}
         </p>
-      </div>
+      </RevealFromSide>
     </div>
   );
 }

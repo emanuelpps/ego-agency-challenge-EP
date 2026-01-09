@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { ModelHighlightApi } from "@/features/cars/types/car.api.types";
+import { RevealFromSide } from "@/components/animations/RevealFromSide";
 
 interface Props {
   highlights: ModelHighlightApi[];
@@ -20,30 +23,36 @@ export default function CarHighlights({ highlights }: Props) {
             }`}
           >
             {index % 2 === 1 && (
-              <div className="relative w-full h-[260px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover rounded-[6px]"
-                />
-              </div>
+              <RevealFromSide side="left">
+                <div className="relative w-full h-[260px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-[6px]"
+                  />
+                </div>
+              </RevealFromSide>
             )}
-            <div className="w-full">
-              <h3 className="text-[20px] font-semibold mb-4">{item.title}</h3>
-              <p className="text-gray-600">
-                {item.content.replace(/<[^>]+>/g, "")}
-              </p>
-            </div>
-            {index % 2 === 0 && (
-              <div className="relative w-full h-[260px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
+            <RevealFromSide side={isEven ? "left" : "right"}>
+              <div className="w-full">
+                <h3 className="text-[20px] font-semibold mb-4">{item.title}</h3>
+                <p className="text-gray-600">
+                  {item.content.replace(/<[^>]+>/g, "")}
+                </p>
               </div>
+            </RevealFromSide>
+            {index % 2 === 0 && (
+              <RevealFromSide side="right">
+                <div className="relative w-full h-[260px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </RevealFromSide>
             )}
           </div>
         );

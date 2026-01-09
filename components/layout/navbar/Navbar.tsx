@@ -34,7 +34,7 @@ export function Navbar() {
         </nav>
         <button
           onClick={toggleMenu}
-          className="flex items-center gap-2 text-sm text-neutral-700"
+          className="flex items-center gap-2 text-sm text-neutral-700 cursor-pointer"
         >
           <span className="font-[400] hidden lg:flex">Menú</span>
           <div className="flex flex-col gap-[3px]">
