@@ -115,8 +115,4 @@ Tener instalado:
 - **Type Safety**: TypeScript en todo el proyecto
 - **Factory Pattern**: Para componentes de botones
 
-## Licencia
-
-Proyecto desarrollado como challenge técnico para EGO Agency.
-
 ---
