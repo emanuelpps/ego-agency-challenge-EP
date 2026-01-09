@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EGO Agency - Challenge Frontend
 
-## Getting Started
+Un proyecto desarrollado con Next.js que presenta un catálogo interactivo de vehículos Toyota, incluyendo listado de modelos y páginas de detalle con características y destacados.
 
-First, run the development server:
+## Deploy
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Podés ver la aplicación funcionando en: **[https://ego-agency-challenge-ep.vercel.app/](https://ego-agency-challenge-ep.vercel.app/)**
+
+## Descripción del Proyecto
+
+Este challenge técnico implementa una experiencia de usuario moderna para explorar modelos de vehículos. La aplicación incluye:
+
+- **Página principal**: Catálogo de vehículos con filtros por segmento y ordenamiento
+- **Páginas de detalle**: Información completa de cada modelo con galería de características y destacados
+- **Navegación fluida**: Sistema de rutas dinámicas con Next.js App Router
+- **Animaciones**: Transiciones suaves con Framer Motion
+- **Diseño responsive**: Optimizado para dispositivos móviles y desktop
+
+## Tecnologías Utilizadas
+
+- **Next.js 16.1.1** - Framework React
+- **TypeScript** - Tipado estático
+- **Tailwind CSS 4** - Estilos
+- **Framer Motion** - Animaciones y transiciones
+- **Montserrat** - Tipografía
+
+## Instalación y Ejecución Local
+
+### Prerequisitos
+
+Tener instalado:
+
+- Node.js (versión 18 o superior)
+- npm, yarn, pnpm o bun
+
+### Pasos para levantar el proyecto
+
+1. **Cloná el repositorio**
+
+   ```bash
+   git clone https://github.com/emanuelpps/ego-agency-challenge-EP.git
+   cd ego-agency-challenge
+   ```
+2. **Instalá las dependencias**
+
+   ```bash
+   npm install
+   # o
+   yarn install
+   # o
+   pnpm install
+   ```
+3. **Ejecutá el servidor de desarrollo**
+
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   # o
+   pnpm dev
+   ```
+4. **Abrí tu navegador**
+
+   Visitá [http://localhost:3000](http://localhost:3000) para ver la aplicación funcionando.
+
+## Estructura del Proyecto
+
+```
+├── api/                    # Endpoints de la API
+├── app/                    # App Router de Next.js
+│   ├── [slug]/            # Rutas dinámicas para detalle
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx           # Página home
+├── components/        
+│   ├── animations/        # Componentes de animación
+│   ├── layout/            # Navbar y Footer
+│   └── ui/                # Componentes UI reutilizables
+├── features/
+│   └── cars/              # Feature de vehículos
+│       ├── pages/         # Páginas del módulo
+│       ├── services/      # Servicios de API
+│       └── types/         # Definiciones TypeScript
+└── lib/
+    └── mappers/           # Transformadores de datos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Catálogo de Vehículos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Visualización en grilla responsive
+- Filtrado por segmento (Autos, SUVs, Pickups)
+- Ordenamiento por precio y año
+- Hover effects interactivos
 
-## Learn More
+### Detalle de Modelo
 
-To learn more about Next.js, take a look at the following resources:
+- Hero section con imagen y descripción
+- Galería de características con navegación
+- Sección de destacados con layout alternado
+- Animaciones al hacer scroll
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Navegación
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Navbar fijo con menú hamburguesa
+- Footer institucional
+- Página 404
+- Loading state
 
-## Deploy on Vercel
+## Características Técnicas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Server Components**: Optimización de rendimiento con RSC
+- **Data Caching**: Revalidación automática de datos cada 60 segundos
+- **Error Boundaries**: Manejo de errores a nivel de página
+- **Type Safety**: TypeScript en todo el proyecto
+- **Factory Pattern**: Para componentes de botones
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

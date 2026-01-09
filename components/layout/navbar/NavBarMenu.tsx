@@ -92,6 +92,7 @@ export default function NavBarMenu({
                     }`}
                   >
                     <motion.button
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
                       className={`w-full text-right px-10 py-[1px] text-[20px] text-gray-800 transition-colors cursor-pointer ${section.hover}`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
