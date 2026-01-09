@@ -104,8 +104,8 @@ Tener instalado:
 
 - Navbar fijo con menú hamburguesa
 - Footer institucional
-- Páginas 404 personalizadas
-- Loading states
+- Página 404
+- Loading state
 
 ## Características Técnicas
 
