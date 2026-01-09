@@ -18,6 +18,7 @@ export default function CarHero({ car }: Props) {
           src={car.photo}
           alt={car.name}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-contain"
           priority
         />
