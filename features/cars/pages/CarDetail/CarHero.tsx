@@ -25,8 +25,7 @@ export default function CarHero({ car }: Props) {
           {car.title}
         </h1>
         <p className="text-[#373737] text-[16px] max-w-md mx-auto lg:mx-0">
-          Texto lorem ipsum dolor sit amet orem ipsum dolor sit amet. lorem
-          ipsum dolor sit amet orem ipsum dolor sit amet.
+          {car.description.replace(/<[^>]+>/g, '')}
         </p>
       </div>
     </div>
