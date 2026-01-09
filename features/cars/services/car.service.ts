@@ -1,5 +1,6 @@
 import { API_ENDPOINTS } from "@/api/endpoints";
-import { Car } from "../types/car.types";
+import { Car } from "@/features/cars/types/car.types";
+import { CarDetailApiModel } from "@/features/cars/types/car.api.types";
 
 export async function getCars(): Promise<Car[]> {
   try {
@@ -17,7 +18,7 @@ export async function getCars(): Promise<Car[]> {
   }
 }
 
-export async function getCarById(id: string): Promise<Car | null> {
+export async function getCarById(id: string): Promise<CarDetailApiModel | null> {
   try {
     const response = await fetch(API_ENDPOINTS.CAR_BY_ID(id), {
       next: { revalidate: 60 },
