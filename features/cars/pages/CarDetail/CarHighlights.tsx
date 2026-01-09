@@ -23,7 +23,7 @@ export default function CarHighlights({ highlights }: Props) {
             }`}
           >
             {index % 2 === 1 && (
-              <RevealFromSide side="left">
+              <RevealFromSide side="left" className="w-full">
                 <div className="relative w-full h-[260px]">
                   <Image
                     src={item.image}
@@ -34,7 +34,7 @@ export default function CarHighlights({ highlights }: Props) {
                 </div>
               </RevealFromSide>
             )}
-            <RevealFromSide side={isEven ? "left" : "right"}>
+            <RevealFromSide side={isEven ? "left" : "right"}  className="w-full">
               <div className="w-full">
                 <h3 className="text-[20px] font-semibold mb-4">{item.title}</h3>
                 <p className="text-gray-600">
@@ -43,7 +43,7 @@ export default function CarHighlights({ highlights }: Props) {
               </div>
             </RevealFromSide>
             {index % 2 === 0 && (
-              <RevealFromSide side="right">
+              <RevealFromSide side="right" className="w-full">
                 <div className="relative w-full h-[260px]">
                   <Image
                     src={item.image}
