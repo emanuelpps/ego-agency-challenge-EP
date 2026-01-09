@@ -12,11 +12,10 @@ export default function Error({
   useEffect(() => {
     console.error(error);
   }, [error]);
-
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-        <h1 className="text-4xl font-bold text-red-600 mb-4">
+        <h1 className="text-[20px] text-[#373737] font-medium mb-4">
           Error al Cargar
         </h1>
         <ButtonFactory

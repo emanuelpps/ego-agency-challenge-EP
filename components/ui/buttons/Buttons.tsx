@@ -15,7 +15,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({ label, onClick }) => (
 
 export const SecondaryButton: React.FC<ButtonProps> = ({ label, onClick }) => (
   <button
-    className="flex w-[152px] h-[34px] rounded-[40px] bg-[#FFFFFF] text-[#191919] text-[13px] font-semibold hover:bg-[#333333] transition-all duration-300 cursor-pointer justify-center items-center border border-[#191919]"
+    className="flex w-[152px] h-[34px] rounded-[40px] bg-[#FFFFFF] text-[#191919] text-[13px] font-semibold hover:bg-[#333333] hover:text-white transition-all duration-300 cursor-pointer justify-center items-center border border-[#191919]"
     aria-label={typeof label === "string" ? label : "secondary button"}
     onClick={onClick}
   >

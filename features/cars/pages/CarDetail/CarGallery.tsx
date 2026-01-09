@@ -57,8 +57,7 @@ export default function CarGallery({ items = [] }: Props) {
         </button>
         <div
           ref={containerRef}
-          className="
-            flex gap-10 justify-center md:overflow-x-hidden md:scroll-smooth overflow-x-auto scroll-smooth snap-x snap-mandatory md:snap-none -mx-4 md:mx-0 px-4 md:px-0"
+          className="flex gap-10 md:justify-center overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory md:snap-none md:mx- md:px-0 no-scrollbar"
         >
           {items.map((item) => (
             <div
