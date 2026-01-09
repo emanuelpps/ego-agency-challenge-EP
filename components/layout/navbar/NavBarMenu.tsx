@@ -1,6 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavBarMenuProps {
   isMenuOpen: boolean;
@@ -82,15 +83,24 @@ export default function NavBarMenu({
                 className={`py-4 ${section.bg} border-b border-gray-200`}
               >
                 {section.items.map((item, j) => (
-                  <motion.button
+                  <Link
                     key={j}
-                    className={`w-full text-right px-10 py-[1px] text-[20px] text-gray-800 transition-colors cursor-pointer ${section.hover}`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    href={`/${
+                      item === "Modelos"
+                        ? "/"
+                        : item.toLowerCase().replace(/\s+/g, "-")
+                    }`}
                   >
-                    {item}
-                  </motion.button>
+                    <motion.button
+                      key={j}
+                      className={`w-full text-right px-10 py-[1px] text-[20px] text-gray-800 transition-colors cursor-pointer ${section.hover}`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      {item}
+                    </motion.button>
+                  </Link>
                 ))}
               </div>
             ))}
