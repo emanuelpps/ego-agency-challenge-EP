@@ -45,8 +45,7 @@ export default function CarGallery({ items = [] }: Props) {
         <button
           onClick={() => scrollToIndex(activeIndex + 1)}
           disabled={activeIndex === items.length - 1}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden md:flex h-full w-14 items-center justify-center rounded-md bg-[#FFFFFF8F]/[56] backdrop-blur shadow
-          disabled:opacity-40"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden md:flex h-full w-14 items-center justify-center rounded-md bg-[#FFFFFF8F]/[56] backdrop-blur shadow disabled:opacity-40"
         >
           <Image
             src="/icons/SortArrow.svg"
@@ -59,24 +58,24 @@ export default function CarGallery({ items = [] }: Props) {
         <div
           ref={containerRef}
           className="
-            flex gap-10
-            overflow-x-hidden
-            scroll-smooth
-            justify-center
-          "
+            flex gap-10 justify-center md:overflow-x-hidden md:scroll-smooth overflow-x-auto scroll-smooth snap-x snap-mandatory md:snap-none -mx-4 md:mx-0 px-4 md:px-0"
         >
           {items.map((item) => (
-            <div key={item.id} className="min-w-[280px] max-w-[280px] py-10">
+            <div
+              key={item.id}
+              className="min-w-[80%] md:min-w-[280px] max-w-[80%] md:max-w-[280px] py-10 snap-center md:snap-none"
+            >
               <div className="relative h-[170px] rounded-[6px] overflow-hidden bg-black">
                 <Image
                   width={268}
                   height={146}
                   src={item.image}
                   alt={item.title}
+                  className="object-cover w-full h-full"
                 />
               </div>
               <div className="mt-4 space-y-2">
-                <h3 className="text-[20px] font-semibold text-[ #373737]">
+                <h3 className="text-[20px] font-semibold text-[#373737]">
                   {item.title}
                 </h3>
                 <p className="text-[16px] text-gray-600 leading-snug">
