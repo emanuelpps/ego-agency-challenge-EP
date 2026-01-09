@@ -59,9 +59,9 @@ export default function NavBarMenu({
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "tween", duration: 0.3 }}
-          className="fixed top-0 right-0 z-50 h-screen w-full sm:w-[375px] bg-white border-l border-gray-200 shadow-lg flex flex-col"
+          className="fixed top-0 right-0 z-50 h-screen w-full sm:w-[375px] bg-white border-l border-gray-200 shadow-lg flex flex-col overflow-x-hidden"
         >
-          <div className="flex justify-end p-5">
+          <div className="flex justify-end p-5 shrink-0">
             <button
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center text-base text-gray-800 hover:text-gray-600 cursor-pointer"
@@ -76,7 +76,7 @@ export default function NavBarMenu({
               />
             </button>
           </div>
-          <div className="flex flex-col h-full">
+          <div className="flex-1 overflow-y-auto overscroll-contain scrollbar-hide">
             {menuSections.map((section, i) => (
               <div
                 key={i}
@@ -92,11 +92,9 @@ export default function NavBarMenu({
                     }`}
                   >
                     <motion.button
-                      key={j}
                       className={`w-full text-right px-10 py-[1px] text-[20px] text-gray-800 transition-colors cursor-pointer ${section.hover}`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 300 }}
                     >
                       {item}
                     </motion.button>
